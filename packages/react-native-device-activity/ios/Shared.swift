@@ -193,8 +193,8 @@ func executeGenericAction(
   } else if type == "disableBlockAllMode" {
     disableBlockAllMode(triggeredBy: triggeredBy)
   } else if type == "openApp" {
-    // todo: replace with general string
-    openUrl(urlString: "device-activity://")
+    let deeplinkUrl = action["deeplinkUrl"] as? String ?? "device-activity://"
+    openUrl(urlString: deeplinkUrl)
 
     sleep(ms: 1000)
   } else if type == "enableBlockAllMode" {

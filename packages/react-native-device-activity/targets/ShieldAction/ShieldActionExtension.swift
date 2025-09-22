@@ -116,9 +116,14 @@ func handleShieldAction(
     }
 
     let url = configForSelectedAction["url"] as? String
+    let deeplinkUrl = configForSelectedAction["deeplinkUrl"] as? String
 
     if type == "openUrl" {
       openUrl(urlString: url ?? "device-activity://")
+    }
+
+    if type == "openApp" {
+      openUrl(urlString: deeplinkUrl ?? "device-activity://")
     }
 
     if type == "openUrlWithDispatch" {

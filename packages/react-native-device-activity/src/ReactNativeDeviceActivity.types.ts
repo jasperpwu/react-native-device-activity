@@ -172,6 +172,8 @@ export type ShieldActionType =
 export type ShieldAction = {
   /** @deprecated use actions instead */
   type?: ShieldActionType;
+  /** @deprecated use actions instead - only used when type is "openApp" */
+  deeplinkUrl?: string;
   delay?: number;
   payload?: NotificationPayload;
   /**
@@ -261,6 +263,7 @@ export type Action =
     } & CommonTypeParams)
   | ({
       type: "openApp";
+      deeplinkUrl?: string;
     } & CommonTypeParams)
   | ({
       type: "sendHttpRequest";
